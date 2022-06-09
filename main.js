@@ -109,7 +109,7 @@ class Contenedor {
             await fs.promises.writeFile(`./${this.nombreArchivo}`, '[]')
             console.log('Archivo reseteado con exito')
         try {
-                    console.log(`Se ha borrado el objeto, id: ${nuevoObj.id}`);
+                    console.log(`Se estan borrando los objetos, id: ${nuevoObj.id}`);
                 } catch (error) {
                     console.log(` ocurrio un error ${error}`)
         
