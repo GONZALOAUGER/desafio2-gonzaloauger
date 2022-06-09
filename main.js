@@ -15,6 +15,10 @@ class Contenedor {
                 .catch(async (err) => {
                     console.log('Se ha creado el archivo')
                     await fs.promises.writeFile(`./${nombreArchivo}`, '[]')
+                try {
+                    console.log(`Se ha creado el archivo, id: ${nuevoObj.id}`);
+                } catch (error) {
+                    console.log(` ocurrio un error ${error}`)
                 })
         }
         exe();
@@ -63,6 +67,10 @@ class Contenedor {
                 console.log(obj);
             } else {
                 console.log(null)
+               try {
+                    console.log(`Se ha encontrado el Id, id: ${nuevoObj.id}`);
+                } catch (error) {
+                    console.log(` ocurrio un error ${error}`)
             }
         }), 1000
     }
@@ -85,6 +93,10 @@ class Contenedor {
             archivo = JSON.stringify(archivo);
             await fs.promises.writeFile(`./${this.nombreArchivo}`, archivo);
             console.log('Se ha borrado el archivo')
+            try {
+                    console.log(`Se ha encontrado el archivo, id: ${nuevoObj.id}`);
+                } catch (error) {
+                    console.log(` Se ha borrado el archivo ${error}`)
         }
     }
 
@@ -92,6 +104,10 @@ class Contenedor {
             console.log('Se estan borrando los objetos')
             await fs.promises.writeFile(`./${this.nombreArchivo}`, '[]')
             console.log('Archivo reseteado con exito')
+        try {
+                    console.log(`Se ha borrado el objeto, id: ${nuevoObj.id}`);
+                } catch (error) {
+                    console.log(` ocurrio un error ${error}`)
         
     }
 }
