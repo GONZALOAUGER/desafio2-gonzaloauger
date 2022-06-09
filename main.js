@@ -80,6 +80,10 @@ class Contenedor {
         let archivo = await fs.promises.readFile(`./${this.nombreArchivo}`, 'utf-8');
         archivo = JSON.parse(archivo);
         return console.log(archivo);
+            try {
+                    console.log(`Se ha obtenido con éxito, id: ${nuevoObj.id}`);
+                } catch (error) {
+                    console.log(` ocurrio un error ${error}`)
     }
 
     async deleteById(id) {
